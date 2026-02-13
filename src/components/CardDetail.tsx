@@ -359,14 +359,7 @@ function CardDetail({
                   width: '100%',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                  <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '1.5em', height: '1.5em', borderRadius: '50%', background: '#a7d7b5', marginLeft: '0.5em', marginRight: '0.2em' }}>
-                    <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
-                      <path d="M6 10.5l3 3 5-5" stroke="#3a7750" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                </div>
+                <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
                 <span style={{ fontSize: '0.85em', color: '#6b7280', fontWeight: 400 }}>{subtitle}</span>
               </div>
             ))}

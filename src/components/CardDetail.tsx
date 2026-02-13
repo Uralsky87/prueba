@@ -1,4 +1,3 @@
-  const [isActividadesOpen, setIsActividadesOpen] = React.useState(false);
 import React from 'react'
 // ...existing code...
 
@@ -23,6 +22,7 @@ function CardDetail({
   onToggleContenidos,
 }: CardDetailProps) {
   const [isClasesOpen, setIsClasesOpen] = React.useState(false);
+  const [isActividadesOpen, setIsActividadesOpen] = React.useState(false);
   const generalButtons = [
     'Tablón general',
     'Foro general',
@@ -365,7 +365,7 @@ function CardDetail({
             ))}
           </div>
         </Accordion>
-          const [isClasesOpen, setIsClasesOpen] = React.useState(false);
+          {/* ...existing code... */}
         {/* Accordion de Actividades Obligatorias */}
         <Accordion
           title="Actividades Obligatorias"

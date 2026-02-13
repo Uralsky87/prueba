@@ -404,15 +404,7 @@ function CardDetail({
                   width: '100%',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5em' }}>
-                  {/* Círculo verde con tick */}
-                  <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '1.25em', height: '1.25em', borderRadius: '50%', background: '#22c55e', color: '#fff', fontSize: '1em' }}>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ display: 'block' }}>
-                      <path d="M4 8.5L7 11.5L12 5.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                  <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
-                </div>
+                <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
                 <span style={{ fontSize: '0.85em', color: '#6b7280', fontWeight: 400 }}>{subtitle}</span>
               </div>
             ))}

@@ -243,7 +243,7 @@ function CardDetail({
                                 </td>
                                 <td style={{ width: 32, textAlign: 'center', color: '#6b7280', fontWeight: 500, fontSize: '1.1rem' }}>-</td>
                                 <td style={{ fontWeight: 600, fontSize: '1rem', color: '#111827', textAlign: 'left', padding: '4px 0 4px 8px', minWidth: '3.5em' }}>
-                                  {['8,00','9,00','10,00'][[2,1,0,2,1,0,2,1,0][idx]]}
+                                  {card.titulo === '25-26_1_1_DAM-DAW_0485_Programación' && idx === 3 ? '4,00' : ['8,00','9,00','10,00'][[2,1,0,2,1,0,2,1,0][idx]]}
                                 </td>
                               </tr>
                               <tr style={{ background: '#f3f4f6' }}>
@@ -277,11 +277,14 @@ function CardDetail({
                                   Total RA{idx+1} CONV.<br />ORDINARIA
                                 </td>
                                 <td style={{ fontWeight: 700, fontSize: '1.08rem', color: '#111827', textAlign: 'left', padding: '4px 0 4px 8px' }}>
-                                  {(() => {
-                                    const evalCont = parseFloat(['8,00','9,00','10,00'][[2,1,0,2,1,0,2,1,0][idx]].replace(',','.'));
-                                    const examen = 10.00;
-                                    return Math.round((evalCont + examen) / 2);
-                                  })()}
+                                  {card.titulo === '25-26_1_1_DAM-DAW_0485_Programación' && idx === 3
+                                    ? 4
+                                    : (() => {
+                                        const evalCont = parseFloat(['8,00','9,00','10,00'][[2,1,0,2,1,0,2,1,0][idx]].replace(',','.'));
+                                        const examen = 10.00;
+                                        return Math.round((evalCont + examen) / 2);
+                                      })()
+                                  }
                                 </td>
                               </tr>
                             </tbody>

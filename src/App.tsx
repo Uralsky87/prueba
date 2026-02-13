@@ -3,7 +3,7 @@ import Accordion from './components/Accordion'
 import CardDetail from './components/CardDetail'
 import CardList from './components/CardList'
 import Header from './components/Header'
-import type { CardData, GeneralFieldsMap, TabKey } from './types'
+import type { CardData, TabKey } from './types'
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabKey>('area')

@@ -329,6 +329,7 @@ function CardDetail({
           onToggle={() => {}}
         >
           {/* Sin contenido */}
+          <></>
         </Accordion>
         {/* Eliminado el Accordion de Contenidos vacío */}
       </div>

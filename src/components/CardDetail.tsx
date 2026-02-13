@@ -359,7 +359,10 @@ function CardDetail({
                   width: '100%',
                 }}
               >
-                <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
+                <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+                  <img src="archivo.png" alt="Archivo" style={{ width: '1.6em', height: '1.6em', marginRight: '0.6em', marginLeft: '-0.2em', objectFit: 'contain', flexShrink: 0 }} />
+                  <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
+                </div>
                 <span style={{ fontSize: '0.85em', color: '#6b7280', fontWeight: 400 }}>{subtitle}</span>
               </div>
             ))}
@@ -402,7 +405,7 @@ function CardDetail({
               </div>
             ))}
           </div>
-            <img src="archivo.png" alt="Archivo" style={{ width: '1.6em', height: '1.6em', marginRight: '0.6em', marginLeft: '-0.2em', objectFit: 'contain', flexShrink: 0 }} />
+
         </Accordion>
       </div>
 

@@ -402,6 +402,7 @@ function CardDetail({
               </div>
             ))}
           </div>
+            <img src="archivo.png" alt="Archivo" style={{ width: '1.6em', height: '1.6em', marginRight: '0.6em', marginLeft: '-0.2em', objectFit: 'contain', flexShrink: 0 }} />
         </Accordion>
       </div>
 

@@ -10,7 +10,7 @@ function Header({ activeTab, onTabChange }: HeaderProps) {
   return (
     <header className="app-header">
       <div className="header-left">
-        <img className="title-logo" src="/titulo_ini.png" alt="Titulo" />
+        <img className="title-logo" src="titulo_ini.png" alt="Titulo" />
         <Tabs activeTab={activeTab} onChange={onTabChange} />
       </div>
       <div className="header-actions">

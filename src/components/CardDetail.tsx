@@ -11,8 +11,6 @@ type CardDetailProps = {
   onBack: () => void
   onToggleGeneral: () => void
   onToggleContenidos: () => void
-  generalValues: string[]
-  onGeneralChange: (index: number, value: string) => void
 }
 
 function CardDetail({
@@ -22,8 +20,6 @@ function CardDetail({
   onBack,
   onToggleGeneral,
   onToggleContenidos,
-  generalValues,
-  onGeneralChange,
 }: CardDetailProps) {
   const generalButtons = [
     'Tablón general',
@@ -105,28 +101,28 @@ function CardDetail({
           </button>
           <div className={isGeneralOpen ? 'accordion-panel is-open' : 'accordion-panel is-closed'} aria-hidden={!isGeneralOpen}>
             <div className="general-buttons">
-              {generalButtons.map((label, idx) => (
-                  <div
-                    key={label}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.5em',
-                      marginBottom: '0.18em',
-                      border: '1px solid #111',
-                      borderRadius: '0.3em',
-                      padding: '0.15em 0.7em',
-                      background: '#fff',
-                      height: '1.8em',
-                    }}
-                  >
-                    <img
-                      src="/monologo.png"
-                      alt="icono monologo"
-                      style={{ height: '1.3em', width: 'auto', objectFit: 'contain', marginRight: '0.6em' }}
-                    />
-                    <span>{label}</span>
-                  </div>
+              {generalButtons.map((label) => (
+                <div
+                  key={label}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5em',
+                    marginBottom: '0.18em',
+                    border: '1px solid #111',
+                    borderRadius: '0.3em',
+                    padding: '0.15em 0.7em',
+                    background: '#fff',
+                    height: '1.8em',
+                  }}
+                >
+                  <img
+                    src="monologo.png"
+                    alt="icono monologo"
+                    style={{ height: '1.3em', width: 'auto', objectFit: 'contain', marginRight: '0.6em' }}
+                  />
+                  <span>{label}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -176,67 +172,7 @@ function CardDetail({
             ))}
           </div>
         </Accordion>
-
-        {/* Accordion de Actividades obligatorias */}
-        {/* Accordion de Actividades obligatorias */}
-        {/* Accordion de Actividades obligatorias */}
-        {(() => {
-          const [isObligOpen, setIsObligOpen] = React.useState(true);
-          return (
-            <Accordion
-              title="Actividades obligatorias"
-              isOpen={isObligOpen}
-              onToggle={() => setIsObligOpen((prev) => !prev)}
-            >
-              <div className="formativo-blocks">
-                <button className="general-link-btn" type="button" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: '0.2em', width: '100%', position: 'relative', marginBottom: '10px', paddingRight: '2.5em' }}>
-                  <span style={{ fontWeight: 600, fontSize: '0.98rem', color: '#111827' }}>Entrega de la actividad de la UT2. Redes locales y dispositivos de interconexión (RA1, RA5)</span>
-                  <span style={{ fontSize: '0.76rem', color: '#6b7280', marginTop: '2px' }}>Cierre: lunes, 3 de noviembre de 2025, 23:59</span>
-                  <span style={{ position: 'absolute', right: '0.7em', top: '50%', transform: 'translateY(-50%)' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '1.5em', height: '1.5em', borderRadius: '50%', background: '#a7d7b5' }}>
-                      <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
-                        <path d="M6 10.5l3 3 5-5" stroke="#3a7750" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </span>
-                </button>
-                <button className="general-link-btn" type="button" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: '0.2em', width: '100%', position: 'relative', marginBottom: '10px', paddingRight: '2.5em' }}>
-                  <span style={{ fontWeight: 600, fontSize: '0.98rem', color: '#111827' }}>Entrega de la actividad de la UT3. Sistemas operativos: conceptos, tipos e instalación (RA2)</span>
-                  <span style={{ fontSize: '0.76rem', color: '#6b7280', marginTop: '2px' }}>Cierre: lunes, 17 de noviembre de 2025, 23:59</span>
-                  <span style={{ position: 'absolute', right: '0.7em', top: '50%', transform: 'translateY(-50%)' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '1.5em', height: '1.5em', borderRadius: '50%', background: '#a7d7b5' }}>
-                      <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
-                        <path d="M6 10.5l3 3 5-5" stroke="#3a7750" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </span>
-                </button>
-                <button className="general-link-btn" type="button" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: '0.2em', width: '100%', position: 'relative', marginBottom: '10px', paddingRight: '2.5em' }}>
-                  <span style={{ fontWeight: 600, fontSize: '0.98rem', color: '#111827' }}>Entrega de la actividad de la UT5. Administración básica de red y servicios en entorno local (RA6)</span>
-                  <span style={{ fontSize: '0.76rem', color: '#6b7280', marginTop: '2px' }}>Cierre: lunes, 1 de diciembre de 2025, 23:59</span>
-                  <span style={{ position: 'absolute', right: '0.7em', top: '50%', transform: 'translateY(-50%)' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '1.5em', height: '1.5em', borderRadius: '50%', background: '#a7d7b5' }}>
-                      <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
-                        <path d="M6 10.5l3 3 5-5" stroke="#3a7750" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </span>
-                </button>
-                <button className="general-link-btn" type="button" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: '0.2em', width: '100%', position: 'relative', marginBottom: '10px', paddingRight: '2.5em' }}>
-                  <span style={{ fontWeight: 600, fontSize: '0.98rem', color: '#111827' }}>Entrega de la actividad de la UT7. Documentación técnica, licencias y herramientas de productividad (RA7)</span>
-                  <span style={{ fontSize: '0.76rem', color: '#6b7280', marginTop: '2px' }}>Cierre: lunes, 15 de diciembre de 2025, 23:59</span>
-                  <span style={{ position: 'absolute', right: '0.7em', top: '50%', transform: 'translateY(-50%)' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '1.5em', height: '1.5em', borderRadius: '50%', background: '#a7d7b5' }}>
-                      <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
-                        <path d="M6 10.5l3 3 5-5" stroke="#3a7750" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </span>
-                </button>
-              </div>
-            </Accordion>
-          );
-        })()}
+        {/* Fin de Accordions principales */}
         {/* Accordion de Clases síncronas (vacío y no desplegable) */}
         {/* Solo un menú de Clases síncronas, el segundo ha sido eliminado */}
 
@@ -411,7 +347,7 @@ function CardDetail({
         bottom: 0,
         left: 0,
       }}>
-        <img src="/titulo_ini.png" alt="Logo Linkia FP" style={{ maxWidth: '220px', width: '100%', height: 'auto', marginBottom: '10px' }} />
+        <img src="titulo_ini.png" alt="Logo Linkia FP" style={{ maxWidth: '220px', width: '100%', height: 'auto', marginBottom: '10px' }} />
         <span style={{ color: '#6b7280', fontSize: '0.98rem', fontWeight: 400, textAlign: 'center' }}>
           © 2026 Linkia FP Formación Profesional Oficial a Distancia
         </span>

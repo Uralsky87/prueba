@@ -11,7 +11,6 @@ function App() {
   const [selectedCardId, setSelectedCardId] = useState<string | null>(null)
   const [isGeneralOpen, setIsGeneralOpen] = useState(true)
   const [isContenidosOpen, setIsContenidosOpen] = useState(true)
-  const [generalFields, setGeneralFields] = useState<GeneralFieldsMap>({})
   const areaCards: CardData[] = [
     { id: 'card-1', titulo: '25-26_1_2_DAM-DAW_0373_Sistemas Informáticos', subtitulo: '2025/26 CN_CAT_2S_TR' },
     { id: 'card-2', titulo: '25-26_1_1_DAM-DAW_0484_Bases de Datos', subtitulo: '2025/26 CN_CAT_1S_TR' },
@@ -26,16 +25,6 @@ function App() {
     [areaCards, selectedCardId],
   )
 
-  const handleGeneralFieldChange = (cardId: string, index: number, value: string) => {
-    setGeneralFields((prev) => {
-      const current = prev[cardId] ?? ['', '', '', '', '']
-      const next = [...current]
-      next[index] = value
-      return { ...prev, [cardId]: next }
-    })
-  }
-
-  const getGeneralFieldValues = (cardId: string) => generalFields[cardId] ?? ['', '', '', '', '']
 
   return (
     <div className="app-shell">
@@ -66,10 +55,6 @@ function App() {
             onBack={() => setSelectedCardId(null)}
             onToggleGeneral={() => setIsGeneralOpen((prev) => !prev)}
             onToggleContenidos={() => setIsContenidosOpen((prev) => !prev)}
-            generalValues={getGeneralFieldValues(selectedCard.id)}
-            onGeneralChange={(index, value) =>
-              handleGeneralFieldChange(selectedCard.id, index, value)
-            }
           />
         ) : (
           <CardList cards={areaCards} onSelect={setSelectedCardId} />

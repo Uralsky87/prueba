@@ -1,3 +1,4 @@
+  const [isActividadesOpen, setIsActividadesOpen] = React.useState(false);
 import React from 'react'
 // ...existing code...
 
@@ -21,6 +22,7 @@ function CardDetail({
   onToggleGeneral,
   onToggleContenidos,
 }: CardDetailProps) {
+  const [isClasesOpen, setIsClasesOpen] = React.useState(false);
   const generalButtons = [
     'Tablón general',
     'Foro general',
@@ -328,13 +330,79 @@ function CardDetail({
         {/* Accordion de Clases síncronas (vacío y no desplegable) */}
         <Accordion
           title="Clases síncronas"
-          isOpen={false}
-          onToggle={() => {}}
+          isOpen={isClasesOpen}
+          onToggle={() => setIsClasesOpen((prev) => !prev)}
         >
-          {/* Sin contenido */}
-          <></>
+          <div className="general-buttons">
+            {[
+              { title: 'Clase 01', subtitle: 'Cierre: jueves, 9 de octubre de 2025, 15:30' },
+              { title: 'Clase 02', subtitle: 'Cierre: jueves, 16 de octubre de 2025, 15:30' },
+              { title: 'Clase 03', subtitle: 'Cierre: jueves, 30 de octubre de 2025, 15:30' },
+              { title: 'Clase 04', subtitle: 'Cierre: martes, 11 de noviembre de 2025, 11:15' },
+              { title: 'Clase 05', subtitle: 'Cierre: jueves, 13 de noviembre de 2025, 15:30' },
+              { title: 'Clase 06', subtitle: 'Cierre: jueves, 27 de noviembre de 2025, 15:30' },
+              { title: 'Clase 07', subtitle: 'Cierre: jueves, 11 de diciembre de 2025, 15:30' },
+            ].map(({ title, subtitle }) => (
+              <div
+                key={title}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  gap: '0.1em',
+                  marginBottom: '0.18em',
+                  border: '1px solid #111',
+                  borderRadius: '0.3em',
+                  padding: '0.15em 0.7em',
+                  background: '#fff',
+                  minHeight: '2.2em',
+                  width: '100%',
+                }}
+              >
+                <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
+                <span style={{ fontSize: '0.92em', color: '#6b7280', fontWeight: 400 }}>{subtitle}</span>
+              </div>
+            ))}
+          </div>
         </Accordion>
-        {/* Eliminado el Accordion de Contenidos vacío */}
+          const [isClasesOpen, setIsClasesOpen] = React.useState(false);
+        {/* Accordion de Actividades Obligatorias */}
+        <Accordion
+          title="Actividades Obligatorias"
+          isOpen={isActividadesOpen}
+          onToggle={() => setIsActividadesOpen((prev) => !prev)}
+        >
+          <div className="general-buttons">
+            {[
+              { title: 'Entrega de la actividad de la UT1. Fundamentos de la programación (RA1)', subtitle: 'Cierre: lunes, 20 de octubre de 2025, 23:59' },
+              { title: 'Entrega de la actividad de la UT2. Programación estructurada y estructuras de control (RA3)', subtitle: 'Cierre: lunes, 27 de octubre de 2025, 23:59' },
+              { title: 'Entrega de la actividad de la UT3. Principios de la programación orientada a objetos (RA2)', subtitle: 'Cierre: martes, 11 de noviembre de 2025, 23:59' },
+              { title: 'Entrega de la actividad de la UT4. Definición y uso de clases y objetos propios (RA4)', subtitle: 'Cierre: martes, 11 de noviembre de 2025, 23:59' },
+              { title: 'Entrega de la actividad de la UT6. Tipos de datos compuestos y colecciones (RA6)', subtitle: 'Cierre: lunes, 24 de noviembre de 2025, 23:59' },
+              { title: 'Entrega de la actividad de la UT7. Herencia, jerarquías y polimorfismo en POO (RA7)', subtitle: 'Cierre: lunes, 1 de diciembre de 2025, 23:59' },
+            ].map(({ title, subtitle }) => (
+              <div
+                key={title}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  gap: '0.1em',
+                  marginBottom: '0.18em',
+                  border: '1px solid #111',
+                  borderRadius: '0.3em',
+                  padding: '0.15em 0.7em',
+                  background: '#fff',
+                  minHeight: '2.2em',
+                  width: '100%',
+                }}
+              >
+                <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
+                <span style={{ fontSize: '0.92em', color: '#6b7280', fontWeight: 400 }}>{subtitle}</span>
+              </div>
+            ))}
+          </div>
+        </Accordion>
       </div>
 
       {/* Footer gris al final de la pantalla */}

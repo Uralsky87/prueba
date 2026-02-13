@@ -359,9 +359,16 @@ function CardDetail({
                   width: '100%',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-                  <img src="archivo.png" alt="Archivo" style={{ width: '1.6em', height: '1.6em', marginRight: '0.6em', marginLeft: '-0.2em', objectFit: 'contain', flexShrink: 0 }} />
-                  <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
+                <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <img src="archivo.png" alt="Archivo" style={{ width: '1.6em', height: '1.6em', marginRight: '0.6em', marginLeft: '-0.2em', objectFit: 'contain', flexShrink: 0 }} />
+                    <span style={{ fontSize: '1em', fontWeight: 600 }}>{title}</span>
+                  </div>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '1.5em', height: '1.5em', borderRadius: '50%', background: '#a7d7b5', marginLeft: '0.5em', marginRight: '0.2em' }}>
+                    <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none">
+                      <path d="M6 10.5l3 3 5-5" stroke="#3a7750" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
                 </div>
                 <span style={{ fontSize: '0.85em', color: '#6b7280', fontWeight: 400 }}>{subtitle}</span>
               </div>
